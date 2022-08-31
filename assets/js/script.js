@@ -1,14 +1,21 @@
 // Javascript Page
 let responseText = document.getElementById("response-text");
 let requestUrl = "https://open.er-api.com/v6/latest/USD";
+let currencyInput = document.getElementById('currency-input');
+let currencyButton = document.getElementById('currency-button');
 
-// function getApi(requestUrl) {
-//   fetch(requestUrl).then(function (response) {
-//     console.log(response);
-//     responseText.textContent = response
-//     return response.json;
-//   });
-// }
+getApi()
+function getApi() {
+   axios.get('https://api.coingecko.com/api/v3/exchange_rates')
+    .then(function(response) {
+    console.log(response.data.rates);
+      responseText.textContent = response.data.rates.bch
+     return response.json;
+   });
+ }
+
+
+
 
 (async () => {
     let response = await fetch("https://open.er-api.com/v6/latest/USD");
@@ -18,33 +25,29 @@ let requestUrl = "https://open.er-api.com/v6/latest/USD";
   })()
 
   
-  
-// // Coingecko URL
-// const coingeckoUrl = "https://api.coingecko.com/api/v3/exchange_rates"
-  
 
 
-// const getExchangeRates = async event => {
-//   let string = "https://api.coingecko.com/api/v3/exchange_rates"
-//   await fetch(string)
-//   .then(resp => resp.json())
-//   .then(data => console.log(data.rates))}
-  
-// console.log(getExchangeRates);
 
-// Binance
+let getCurrencyApi = async (currency) => {
+    try {
+        let response = await fetch("https://open.er-api.com/v6/latest/" + currency);
+        let body = await response.json();
+        console.log(body)
+        responseText.textContent = body.rates.BAM;
+        
+    } catch (error) {
+        alert("Currency not found!");
+    }
+ 
+  }
 
-var baseUrl = "https://api.binance.com";
-
-var query = '/api/v3/ticker/price'
-// query += '?symbol=BTCUSDT&limit=5'
-
-var url = baseUrl + query
-
-var ourRequest = new XMLHttpRequest();
-
-ourRequest.open('GET', url, true);
-ourRequest.onload = function(){
-  console.log(ourRequest.responseText);
+  function getInputCurrency(){
+    var inputVal = document.getElementById("currency-input").value;
+    console.log(inputVal);
+    getCurrencyApi(inputVal);
 }
-ourRequest.send();
+
+currencyButton.addEventListener("click", function(){
+    console.log("clicked")
+    getInputCurrency();
+})

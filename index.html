@@ -14,9 +14,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Currency Exchange</title>
+    <title><Currency-Exchange></Currency-Exchange></title>
   </head>
   <body>
+    <div class="container">
+        <div class="row">
+          <input type="text" placeholder="3 digit Currency Code" id="currency-input">
+          <button type="button" id="currency-button">Submit</button>
+        </div>
+      </div>
+
+
     <div class="container">
       <div class="row">
         <h1 id="response-text"></h1>
@@ -55,6 +63,12 @@
     </tbody>
 </table> -->
 
+    <div class="container">
+      <div class="row">
+        <h1 id="reposnse-text"></h1>
+      </div>
+    </div> 
+
     <footer>
       <h5>
         <a href="https://www.exchangerate-api.com"
@@ -67,7 +81,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
-    <script src="./assets/js/script.js">
-    </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+s    <script src="./assets/js/script.js"></script>
+    
   </body>
 </html>
