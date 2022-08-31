@@ -19,10 +19,22 @@
   <body>
     <div class="container">
         <div class="row">
-          <input type="text" placeholder="3 digit Currency Code" id="currency-input">
+            <label>Choose a currency from this list:
+          <input list="currencies" type="text" placeholder="3 digit Currency Code" id="currency-input" >
+          <datalist id="currencies">
+            <option value="USD">
+            <option value="EUR">
+            <option value="Internet Explorer">
+            <option value="Opera">
+            <option value="Safari">
+            <option value="Microsoft Edge">
+          </datalist>
+        </label>
+          
           <button type="button" id="currency-button">Submit</button>
         </div>
       </div>
+      
 
 
     <div class="container">
