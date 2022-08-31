@@ -16,3 +16,35 @@ let requestUrl = "https://open.er-api.com/v6/latest/USD";
     console.log(body)
     responseText.textContent = body.rates.BAM;
   })()
+
+  
+  
+// // Coingecko URL
+// const coingeckoUrl = "https://api.coingecko.com/api/v3/exchange_rates"
+  
+
+
+// const getExchangeRates = async event => {
+//   let string = "https://api.coingecko.com/api/v3/exchange_rates"
+//   await fetch(string)
+//   .then(resp => resp.json())
+//   .then(data => console.log(data.rates))}
+  
+// console.log(getExchangeRates);
+
+// Binance
+
+var baseUrl = "https://api.binance.com";
+
+var query = '/api/v3/ticker/price'
+// query += '?symbol=BTCUSDT&limit=5'
+
+var url = baseUrl + query
+
+var ourRequest = new XMLHttpRequest();
+
+ourRequest.open('GET', url, true);
+ourRequest.onload = function(){
+  console.log(ourRequest.responseText);
+}
+ourRequest.send();
