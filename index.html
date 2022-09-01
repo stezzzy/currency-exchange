@@ -70,6 +70,7 @@
           Currency Exchange
         </p>
         <p class="subtitle px-2">
+
           <div class="container">
             <div class="row">
           <label
@@ -443,6 +444,7 @@
           <h1 class="hide "id="response-text"></h1>
    </div>
       </div>
+            
         </p>
       </div>
     </section>
@@ -458,8 +460,57 @@
         <p class="subtitle is-6">
           <div class="container">
             <div class="row">
-              <input type="text" placeholder="3 digit Crypto Code" id="currency-input">
-              <button class="button is-link is-info is-small" id="currency-button">Submit</button>
+              <div class="container">
+                <div class="row">
+                  <label>
+                    Choose the 3 digit currency code of the currency you would like to convert into cryptocurrency:
+                    <input 
+                      list="currencies3"
+                      type="text"
+                      placeholder="3 digit Currency Code"
+                      id="currency"
+                    />
+                    <datalist id="currencies3">
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                    </datalist>
+                  </label>
+                  <button class="button is-info is-small" id="currency-button">Submit</button>
+                </div>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <label>
+                    Choose the 3 digit cryptocurrency code of the cryptocurrency you would like to compare to previously selected currency:
+                    <input 
+                      list="crytocurrencies"
+                      type="text"
+                      placeholder="3 digit cryptocurrency Code"
+                      id="currency"
+                    />
+                    <datalist id="crytocurrencies">
+                      <option value="BTC"></option>
+                      <option value="ETH"></option>
+                      <option value="XRP"></option>
+                      <option value="LTC"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                      <option value="USD"></option>
+                    </datalist>
+                  </label>
+          
+                  <button class="button is-info is-small" id="currency-button">Submit</button>
+                </div>
+              </div>
               
               <!-- modal -->
               <div class="modal">
@@ -507,101 +558,6 @@
       </div>
     </footer>
   
-
-
-
-
-
-
-
-
-
-
-
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-  
-
-
-      
-
-    <div class="container">
-      <div class="row">
-        
-
-    <div class="container">
-      <div class="row">
-        <label>
-          Choose the 3 digit currency code of the currency you would like to convert into cryptocurrency:
-          <input 
-            list="currencies3"
-            type="text"
-            placeholder="3 digit Currency Code"
-            id="currency"
-          />
-          <datalist id="currencies3">
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-          </datalist>
-        </label>
-
-      </div>
-    </div>
- 
-
-    <div class="container">
-      <div class="row">
-        <label>
-          Choose the 3 digit cryptocurrency code of the cryptocurrency you would like to compare to previuosly selected currency:
-          <input 
-            list="crytocurrencies"
-            type="text"
-            placeholder="3 digit cryptocurrency Code"
-            id="currency"
-          />
-          <datalist id="crytocurrencies">
-            <option value="BTC"></option>
-            <option value="ETH"></option>
-            <option value="XRP"></option>
-            <option value="LTC"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-            <option value="USD"></option>
-          </datalist>
-        </label>
-
-        <button type="button" id="cryptocurrency-button">Submit</button>
-      </div>
-    </div>
 
 
 
