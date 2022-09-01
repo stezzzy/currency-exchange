@@ -5,28 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="Description" content="Enter your description here" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+    <!-- bulma css framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <link rel="stylesheet" href="./assets/css/style.css" />
-    <title><Currency-Exchange></Currency-Exchange></title>
+    <title>Currency Exchange</title>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <label
+
+    <!-- navbar -->
+    <section class="hero is-white is-fullheight-with-navbar block">
+      <div class="hero-head">
+        <nav class="navbar card">
+          <div class="container">
+          <div class="navbar-brand is-size-4">
+            <a class="navbar-item">Currency Exchange</a>
+            <span class="navbar-burger" data-target="navbarMenuHeroB">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroB" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item is-active">
+                User Story
+              </a>
+              <a class="navbar-item">
+                Currency Exchange
+              </a>
+              <a class="navbar-item">
+                Crypto Exchange
+              </a>
+            </div>
+          </div>
+        </div>
+        </nav>
+      </div>
+
+      <!-- user story area -->
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-one-third">
+            <p class="title is-1">
+              User Story
+            </p>
+            <p class="subtitle">
+              Placeholder for user story
+            </p>
+          </div>
+          <div class="column is-two-thirds">
+            <img src="assets/img/undraw_savings_re_eq4w.svg" alt="banner">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- currency exchange -->
+    <section class="hero is-info py-4">
+      <div class="hero-body">
+        <p class="title">
+          Currency Exchange
+        </p>
+        <p class="subtitle px-2">
+          <div class="container">
+            <div class="row">
+          <label
           >Choose the 3 digit currency code of the currency you would like the rates of:
           <input
             list="currencies"
             type="text"
             placeholder="3 digit Currency Code"
-            id="currency-input"
-          />
+            id="currency-input"/>
           <datalist id="currencies">
             <option value="USD"></option>
             <option value="EUR"></option>
@@ -202,8 +254,8 @@
                   list="currencies2"
                   type="text"
                   placeholder="3 digit Currency Code"
-                  id="currency-compare"
-                />
+                  id="currency-compare"/>
+
                 <datalist id="currencies2">
                   <option value="USD"></option>
                   <option value="EUR"></option>
@@ -371,15 +423,115 @@
                 </datalist>
               </label>
 
-        <button type="button" id="currency-button">Submit</button>
+        <button class="button is-black is-small" id="currency-button">Submit</button>
       </div>
     </div>
+    <!-- response to above function -->
+    <div class="container">
+      <div class="row">
+          <h1 id="response-text"></h1>
+   </div>
+      </div>
+        </p>
+      </div>
+    </section>
+
+    <!-- Crypto exchange area -->
+    <div class="columns is-vcentered is-justify-content-space-envenly p-5">
+      <div class="column is-one-third">
+        <p class="title is-2 is-spaced">
+          Crypto Exchange
+        </p>
+        <p class="subtitle is-6">
+          <div class="container">
+            <div class="row">
+              <input type="text" placeholder="3 digit Crypto Code" id="currency-input">
+              <button class="button is-link is-info is-small" id="currency-button">Submit</button>
+            </div>
+          </div>
+        </p>
+      </div>
+      <div class="column is-half">
+        <img src="assets/img/undraw_digital_currency_qpak (1).svg">
+      </div>
+    </div>
+
+
+    <!-- footer -->
+    <footer class="has-background-dark has-text-centered has-text-white py-6">
+      <p>
+        Powered by CoinGecko© and Exchange Rate© 
+      </p>
+      <div class="hero-foot">
+        <nav class="tabs">
+          <div class="container has-text-info">
+            <ul>
+              <li>
+                <a><i class="fab fa-github"></i></a>
+              </li>
+              <li>
+                <a><i class="fab fa-facebook"></i></a>
+              </li>
+              <li>
+                <a><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a><i class="fab fa-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+  
+
+
+      
+
+    <div class="container">
+      <div class="row">
+        
 
     <div class="container">
       <div class="row">
         <h1 id="response-text"></h1>
       </div>
     </div>
+ 
 
     <div class="container">
       <div class="row">
@@ -387,19 +539,14 @@
       </div>
     </div> 
 
-    <footer>
-      <h5>
-        <a href="https://www.exchangerate-api.com"
-          >Rates By Exchange Rate API</a
-        >
-      </h5>
-    </footer>
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-s    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script.js"></script>
     
   </body>
 </html>
