@@ -4,6 +4,7 @@ let requestUrl = "https://open.er-api.com/v6/latest/USD";
 let currencyInput = document.getElementById('currency-input');
 let currencyButton = document.getElementById('currency-button');
 let currencyCompare = document.getElementById('currency-compare');
+let mostRecent = document.getElementById('recent');
 
 var cryptocurrency = document.getElementById('cryptocurrency')
 var cryptocurrencyButton = document.getElementById('cryptocurrency-button')
@@ -41,6 +42,9 @@ let getCurrencyApi = async (currency, converted, amount) => {
         console.log(body)
         responseText.classList.remove("hide");
         responseText.textContent = body.rates[convertedCurr].toFixed(2) * amount + " " + converted;
+        localStorage.setItem('mostRecentConversion', amount + " " + currency + " to " + responseText.textContent);
+        mostRecent.classList.remove('hide');
+        mostRecent.textContent = "Your most recent conversion was: " + localStorage.getItem('mostRecentConversion') + "!"
         
     } catch (error) {
         alert("Currency not found!");
