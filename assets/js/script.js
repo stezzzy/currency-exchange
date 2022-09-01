@@ -5,12 +5,15 @@ let currencyInput = document.getElementById('currency-input');
 let currencyButton = document.getElementById('currency-button');
 let currencyCompare = document.getElementById('currency-compare');
 
+var cryptocurrency = document.getElementById('cryptocurrency')
+var cryptocurrencyButton = document.getElementById('cryptocurrency-button')
+var currency = document.getElementById('currency')
 getApi()
 function getApi() {
    axios.get('https://api.coingecko.com/api/v3/exchange_rates')
     .then(function(response) {
     console.log(response.data.rates);
-      responseText.textContent = response.data.rates.bch
+      responseText.textContent = response.data.rates.btc
      return response.json;
    });
  }
