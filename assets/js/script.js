@@ -5,6 +5,8 @@ let currencyInput = document.getElementById('currency-input');
 let currencyButton = document.getElementById('currency-button');
 let currencyCompare = document.getElementById('currency-compare');
 let mostRecent = document.getElementById('recent');
+var modal = document.getElementById('button-modal');
+var close = document.getElementsByClassName('modal-close')[0];
 
 var cryptocurrency = document.getElementById('cryptocurrency')
 var cryptocurrencyButton = document.getElementById('cryptocurrency-button')
@@ -44,16 +46,19 @@ let getCurrencyApi = async (currency, converted, amount) => {
         localStorage.setItem('mostRecentConversion', amount + " " + currency + " to " + responseText.textContent);
         mostRecent.classList.remove('hide');
         mostRecent.textContent = "Your most recent conversion was: " + localStorage.getItem('mostRecentConversion') + "!"
-        
-        
-    } catch (error) {
-        alert("Currency not found!");
+         } catch (error) 
+    {
+        modal.style.display = 'block'
+        close.onclick =function() {
+        modal.style.display = 'none'
+        window.onclick = function(event) {
+       if (event.target.className == 'modal-background') {
+       modal.style.display ='none'
+     }
+}
     }
-
-
-
- 
-  }
+    }
+}
 
   function getInputCurrency(){
     let inputVal = document.getElementById("currency-input").value;
@@ -69,4 +74,5 @@ currencyButton.addEventListener("click", function(){
     console.log("clicked")
     getInputCurrency();
 })
+
 
