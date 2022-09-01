@@ -29,8 +29,7 @@ function getApi() {
 //     responseText.textContent = body.rates.BAM;
 //   })()
 
-  
-
+mostRecent.textContent = "Your most recent conversion was: " + localStorage.getItem('mostRecentConversion') + "!"
 
 
 let getCurrencyApi = async (currency, converted, amount) => {
@@ -46,13 +45,11 @@ let getCurrencyApi = async (currency, converted, amount) => {
         mostRecent.classList.remove('hide');
         mostRecent.textContent = "Your most recent conversion was: " + localStorage.getItem('mostRecentConversion') + "!"
         
+        
     } catch (error) {
         alert("Currency not found!");
     }
 
-    function convertToCurrency(converted) {
-        
-    }
 
 
  
