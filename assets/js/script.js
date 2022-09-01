@@ -21,27 +21,34 @@ function getApi() {
 
 
 
-(async () => {
-    let response = await fetch("https://open.er-api.com/v6/latest/USD");
-    let body = await response.json();
-    console.log(body)
-    responseText.textContent = body.rates.BAM;
-  })()
+// (async () => {
+//     let response = await fetch("https://open.er-api.com/v6/latest/USD");
+//     let body = await response.json();
+//     console.log(body)
+//     responseText.textContent = body.rates.BAM;
+//   })()
 
   
 
 
 
-let getCurrencyApi = async (currency) => {
+let getCurrencyApi = async (currency, converted, amount) => {
     try {
         let response = await fetch("https://open.er-api.com/v6/latest/" + currency);
         let body = await response.json();
+        console.log(converted);
+        let convertedCurr = converted
         console.log(body)
-        responseText.textContent = body.rates.USD;
+        responseText.textContent = body.rates[convertedCurr].toFixed(2) * amount + " " + converted;
         
     } catch (error) {
         alert("Currency not found!");
     }
+
+    function convertToCurrency(converted) {
+        
+    }
+
 
  
   }
@@ -51,10 +58,13 @@ let getCurrencyApi = async (currency) => {
     console.log(inputVal);
     let compareVal = document.getElementById('currency-compare').value;
     console.log(compareVal);
-    getCurrencyApi(inputVal);
+    let amountVal = document.getElementById('amount').value;
+    console.log(amountVal);
+    getCurrencyApi(inputVal, compareVal, amountVal);
 }
 
 currencyButton.addEventListener("click", function(){
     console.log("clicked")
     getInputCurrency();
 })
+
