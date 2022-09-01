@@ -26,9 +26,9 @@ To exchange cryptocurrencies:
 5. Done!
 
 
-## PLACEHOLDER Preview (we need an image of final deployed proj here)
+## Preview
   
-![image](https://user-images.githubusercontent.com/90112060/186310534-ca4dac4d-0124-4228-87bc-99dee9674c57.png)
+![image](https://user-images.githubusercontent.com/90112060/188024250-8634a961-08a3-4d18-bcd8-1cb8c2dab9be.png)
 
 
 ## Link to Deployed Project
