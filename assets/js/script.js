@@ -39,6 +39,7 @@ let getCurrencyApi = async (currency, converted, amount) => {
         console.log(converted);
         let convertedCurr = converted
         console.log(body)
+        responseText.classList.remove("hide");
         responseText.textContent = body.rates[convertedCurr].toFixed(2) * amount + " " + converted;
         
     } catch (error) {
