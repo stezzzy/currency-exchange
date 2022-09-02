@@ -6,21 +6,6 @@ let currencyButton = document.getElementById('currency-button');
 let currencyCompare = document.getElementById('currency-compare');
 let mostRecent = document.getElementById('recent');
 
-var cryptocurrency = document.getElementById('cryptocurrency')
-var cryptocurrencyButton = document.getElementById('cryptocurrency-button')
-var currency = document.getElementById('currency')
-getApi()
-function getApi() {
-   axios.get('https://api.coingecko.com/api/v3/exchange_rates')
-    .then(function(response) {
-    console.log(response.data.rates);
-      responseText.textContent = response.data.rates.btc
-     return response.json;
-   });
- }
-
-
-
 
 // (async () => {
 //     let response = await fetch("https://open.er-api.com/v6/latest/USD");
@@ -73,3 +58,32 @@ currencyButton.addEventListener("click", function(){
     getInputCurrency();
 })
 
+
+let cryptoCurrencyCompare = document.getElementById('cryptocurrency-compare')
+let cryptoCurrencyCompare2 = document.getElementById('cryptocurrency-compare2')
+let cryptoCurrencyButton = document.getElementById('cryptocurrency-button')
+let cryptoResponse = document.getElementById('crypto-response');
+
+let getCryptoApi = async (crypto, theircurrency) => {
+  try {
+    let response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=" + theircurrency + "&vs_currencies=" + crypto)
+    let body = await response.json();
+    cryptoResponse.textContent = body.usd.btc
+  }
+  catch{
+    alert("no")
+  }
+}
+
+function getCryptoCurrency(){
+  let theirCurrency = cryptoCurrencyCompare2.value
+  let cryptoInput = cryptoCurrencyCompare.value;
+  console.log(cryptoCurrencyCompare2.value)
+  console.log(cryptoInput);
+  getCryptoApi(theirCurrency, cryptoInput);
+}
+
+cryptoCurrencyButton.addEventListener("click", function(){
+  console.log("click crypto");
+  getCryptoCurrency();
+})
