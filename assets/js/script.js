@@ -5,6 +5,7 @@ let currencyInput = document.getElementById('currency-input');
 let currencyButton = document.getElementById('currency-button');
 let currencyCompare = document.getElementById('currency-compare');
 let mostRecent = document.getElementById('recent');
+let mostRecentCrypto = document.getElementById('recent2');
 var modal = document.getElementById('button-modal');
 var close = document.getElementsByClassName('modal-close')[0];
 
@@ -75,4 +76,41 @@ currencyButton.addEventListener("click", function(){
     getInputCurrency();
 })
 
+let cryptoCurrencyCompare = document.getElementById('cryptocurrency-compare')
+let cryptoCurrencyCompare2 = document.getElementById('cryptocurrency-compare2')
+let cryptoCurrencyButton = document.getElementById('cryptocurrency-button')
+let cryptoResponse = document.getElementById('crypto-response');
 
+let getCryptoApi = async (crypto, theircurrency) => {
+  try {
+    let response = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=" + theircurrency + "&vs_currencies=" + crypto)
+    let body = await response.json();
+    cryptoResponse.textContent = body.usd.btc + " BTC"
+    localStorage.setItem('mostRecentCrypto',cryptoResponse.textContent);
+        mostRecentCrypto.textContent = "Your most recent conversion was: 1 USD to " + localStorage.getItem('mostRecentCrypto') + "!"
+  }
+  catch(error) {
+    modal.style.display = 'block'
+        close.onclick =function() {
+        modal.style.display = 'none'
+        window.onclick = function(event) {
+       if (event.target.className == 'modal-background') {
+       modal.style.display ='none'
+     }
+}
+    }
+  }
+}
+
+function getCryptoCurrency(){
+  let theirCurrency = cryptoCurrencyCompare2.value
+  let cryptoInput = cryptoCurrencyCompare.value;
+  console.log(cryptoCurrencyCompare2.value)
+  console.log(cryptoInput);
+  getCryptoApi(theirCurrency, cryptoInput);
+}
+
+cryptoCurrencyButton.addEventListener("click", function(){
+  console.log("click crypto");
+  getCryptoCurrency();
+})
